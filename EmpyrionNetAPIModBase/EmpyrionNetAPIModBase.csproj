@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EmpyrionNetAPIAccess</RootNamespace>
     <AssemblyName>EmpyrionNetAPIModBase</AssemblyName>
-    <TargetFrameworks>netstandard2.0;netcoreapp2.2;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp2.2;netcoreapp3.1;net461</TargetFrameworks>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
@@ -99,6 +99,11 @@
     <Version>1.0.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Product>EmpyrionNetAPIModBase</Product>
+    <NETCoreSdkVersionPath Condition="$(NETCoreSdkVersion) != ''">$(ProgramW6432)\dotnet\sdk\$(NETCoreSdkVersion)</NETCoreSdkVersionPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(NETCoreSdkVersionPath) == ''">
+    <NETCoreSdkVersionPath>$(ProgramW6432)\dotnet\sdk\2.1.511</NETCoreSdkVersionPath>
   </PropertyGroup>
 </Project>
     

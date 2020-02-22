@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EmpyrionNetAPIAccess</RootNamespace>
     <AssemblyName>EmpyrionNetAPIBroker</AssemblyName>
-    <TargetFrameworks>netstandard2.0;netcoreapp2.2;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp2.2;netcoreapp3.1;net461</TargetFrameworks>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -99,5 +99,10 @@
     <Copyright>Copyright © 2020</Copyright>
     <PackageId>EmpyrionNetAPIBroker</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NETCoreSdkVersionPath Condition="$(NETCoreSdkVersion) != ''">$(ProgramW6432)\dotnet\sdk\$(NETCoreSdkVersion)</NETCoreSdkVersionPath>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="$(NETCoreSdkVersionPath) == ''">
+    <NETCoreSdkVersionPath>$(ProgramW6432)\dotnet\sdk\2.1.511</NETCoreSdkVersionPath>
   </PropertyGroup>
 </Project>
